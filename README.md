@@ -8,7 +8,8 @@
 | 2. | CHUA SHANG YEET | |
 | 3. | NGU YU LING | A23CS0149 |
 
-## Raw Data
+
+## Raw Data Files
 ```
 data-case-pgx/
 ```
@@ -18,6 +19,7 @@ data-case-pgx/
 | 2. | **`pgx_gene_panels.csv`** | (9, 12) | Panel info, target genes, manufacturer etc. |
 | 3. | **`pgx_patients.csv`** | (100, 15) | Patient basic info, medical info |
 | 4. | **`pgx_variants.csv`** | (40, 16) | Gene, chromosome, allelic variants etc. |
+
 
 ## Deliverables
 | No. | Deliverables | File | Description |
