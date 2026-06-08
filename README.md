@@ -1,2 +1,14 @@
 # Helix-Medical-Center-DB
 SECB3213 Bioinformatics Database Mini Project
+
+## Deliverables
+| No. | Deliverables | File | Description |
+| --- | --- | --- | --- |
+| D1 | MongoDB Schema Design | `schema.json` | Structure Design of the solution |
+| D2 | Data Ingestion Code | `data.py` | PyMongo ingestion script that connects to MongoDB |
+| D3 | Database Backup | `dump.tar.gz` | MongoDump archive of the populated data |
+| D4 | Query & Result | `query.py` & `results.pdf` | MongoDB queries and 10 results |
+| D5 | FastAPI Implementation | `api.py` | All 10 API endpoints |
+| D6 | Data Portal | `portal.py` | Read-only interactive portal using Streamlit |
+| D7 | Technical Report | `report.pdf` | Report that outlines the mini project |
+| D8 | System Demostration Video | `demo.mp4` | Presentation video of the portal | 
