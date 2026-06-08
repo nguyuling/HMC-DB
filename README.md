@@ -9,11 +9,9 @@
 | 3. | NGU YU LING | A23CS0149 |
 
 ## Raw Data
-**
 ```
 data-case-pgx/
 ```
-**
 | No. | File | Shape (Exc. header row) | Description |
 | --- | --- | --- | --- |
 | 1. | **`pgx_drug_response.csv`** | (200, 15) | Patient ID, drug info, outcome, phenotype observed etc. | (9, 12)
