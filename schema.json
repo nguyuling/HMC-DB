@@ -1,0 +1,35 @@
+{   "//" : [
+        "document",
+            "EMPLOYEE",
+                "Name",
+                "Place",
+                "DEPARTMENT",
+                    "Designation",
+                "PROJECT",
+                    "items",
+                        "Title",
+                        "Workload" ],
+
+    "type" : "object",
+    "properties" : {
+        "EMPLOYEE" : { "type" : "object",
+            "properties" : {
+                "Name" : { "type" : "string" },
+                "Place" : { "type" : "string" },
+                "DEPARTMENT" : { "type" : "object", 
+                    "properties" : {
+                        "Designation" : { "type" : "string" }
+                    }
+                },
+                "PROJECT" : { "type" : "object",
+                    "items" : [{ "type" : "object",
+                        "properties" : {
+                            "Title" : { "type" : "string" },
+                            "Workload" : { "type" : "integer" }
+                        }
+                    }]
+                }
+            }
+        }
+    }
+}
