@@ -1,0 +1,129 @@
+{
+    title": "Helix Medical Center DB",
+    "type": "array",
+    "items": {
+        "type": "object",
+        "properties": {
+
+
+            "patients": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "patient_id": { "type": "string" },
+                        "name": { "type": "string" },
+                        "date_of_birth": { "type": "string", "format": "date" },
+                        "gender": { "type": "string" },
+                        "ethnicity": { "type": "string" },
+                        "blood_type": { "type": "string" },
+                        "primary_condition": {
+                            "type": "object",
+                            "properties": {
+                                "icd10_code": { "type": "string" },
+                                "description": { "type": "string" },
+                                "diagnosed_on": { "type": "string", "format": "date" }
+                            }
+                        },
+                        "comorbidities": {
+                            "type": "array",
+                            "items": { "type": "string" }
+                        },
+                        "site_id": { "type": "string" },
+                        "ordered_panels": {
+                            "type": "array",
+                            "items": { "type": "string" }
+                        },
+                        "contact_info": {
+                            "type": "object",
+                            "properties": {
+                                "email": { "type": "string" },
+                                "phone": { "type": "string" },
+                                "emergency_contact": { "type": "string" }
+                            }
+                        },
+                        "created_at": { "type": "string", "format": "date" }
+                    }
+                }
+            },
+
+
+            "gene_panels": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "panel_id": { "type": "string" },
+                        "panel_name": { "type": "string" },
+                        "penel_type": { "type": "string" },
+                        "version": { "type": "string" },
+                        "status": { "type": "string" },
+                        "target_genes": { 
+                            "type": "array",
+                            "items": { "type": "string" } 
+                        },
+                        "turnaround_days": { "type": "integer" },
+                        "ordering_sites": {
+                            "type": "array",
+                            "items": { "type": "string" }
+                        },
+                        "manufecturer": { "type": "string" },
+                        "regulatory_clearance": { "type": "string" },
+                        "clinical_utility": { "type": "string" },
+                        "created_at": { "type": "string", "format": "date" }
+                    }
+                }
+            },
+
+            
+            "variants": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "variant_id": { "type": "string" },
+                        "panel_id": { "type": "string" },
+                        "gene_symbol": { "type": "string" },
+                        "hgvs_notation": { "type": "string" },
+                        "rsid": { "type": "string" },
+                        "chromosome": { "type": "string" },
+                        "position": { "type": "integer" },
+                        "ref_allele" : { "type": "string" },
+                        "alt_allele": { "type": "string" },
+                        "variant_type": { "type": "string" },
+                        "zygosity_expected": { "type": "string" },
+                        "clinical_significance": { "type": "string" },
+                        "associated_condition": { "type": "string" },
+                        "evidence_level": { "type": "string" },
+                        "created_at": { "type": "string", "format": "date" }
+                    }
+                }
+            },
+
+
+            "drug_responses": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "response_id": { "type": "string" },
+                        "patient_id": { "type": "string" },
+                        "panel_id": { "type": "string" },
+                        "variant_id": { "type": "string" },
+                        "drug_name": { "type": "string" },
+                        "drug_class": { "type": "string" },
+                        "response_type": { "type": "string" },
+                        "outcome": { "type": "string" },
+                        "phenotype_observed": { "type": "string" },
+                        "ctcae_grade": { "type": "integer" },
+                        "recommendation": { "type": "string" },
+                        "evidence_source": { "type": "string" },
+                        "reported_by": { "type": "string" },
+                        "reported_on": { "type": "string", "format": "date" },
+                        "created_at": { "type": "string", "format": "date" }
+                    }
+                }
+            }
+        }
+    }
+}
