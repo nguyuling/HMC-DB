@@ -1,0 +1,48 @@
+{
+    "title": "Helix Medical Center DB",
+    "type": "array",
+    "items": {
+        "type": "object",
+        "properties": {
+
+
+            "patients": {
+                "type": "object",
+                "properties": {
+                    "patient_id": { "type": "string" },
+                    "name": { "type": "string" },
+                    "date_of_birth": { "type": "date" },
+                    "gender": { "type": "string" },
+                    "ethnicity": { "type": "string" },
+                    "blood_type": { "type": "string" },
+                    "primary_condition": {
+                        "type": "object",
+                        "properties": {
+                            "icd10_code": { "type": "string" },
+                            "description": { "type": "string" },
+                            "diagnosed_on": { "type": "date" }
+                        }
+                    },
+                    "comorbidities": {
+                        "type": "array",
+                        "items": { "type": "string" }
+                    },
+                    "site_id": { "type": "string" },
+                    "ordered_panels": {
+                        "type": "array",
+                        "items": { "type": "string" }
+                    },
+                    "contact_info": {
+                        "type": "object",
+                        "properties": {
+                            "email": { "type": "string" },
+                            "phone": { "type": "string" },
+                            "emergency_contact": { "type": "string" }
+                        }
+                    },
+                    "created_at": { "type": "date" }
+                }
+            }
+        }
+    }
+}
