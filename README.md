@@ -11,7 +11,7 @@ This is a Mini Project for the course SECB3213 Bioinformatics Database.
 - **Mini Project Deliverables:**
     | No. | Deliverables | Files | Description |
     | --- | --- | --- | --- |
-    | D1 | MongoDB Schema Design | **`schema.json`** | Structure Design of the solution |
+    | D1 | MongoDB Schema Design | **`hmc.json`** | Structure Design of the solution |
     | D2 | Data Ingestion Code | **`data.py`** | PyMongo ingestion script that connects to MongoDB |
     | D3 | Database Backup | **`dump.tar.gz`** | MongoDump archive of the populated data |
     | D4 | Query & Result | **`query.py`** & `results.pdf` | MongoDB queries and 10 results |
