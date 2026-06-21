@@ -23,7 +23,7 @@ This is a Mini Project for the course SECB3213 Bioinformatics Database.
 
 ## D1 — MongoDB Schema Design
 - **Entity-Relationship Diagram (ERD)**
-    ![ERD](data/erd.png)
+    ![ERD](D1_schemas/erd.png)
 
 - **Schema Design of all 4 entities:**
     - string: `"attribute": { "type": "string" }`
