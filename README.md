@@ -11,46 +11,57 @@ This is a Mini Project for the course SECB3213 Bioinformatics Database.
 - **Mini Project Deliverables:**
     | No. | Deliverables | Files | Description |
     | --- | --- | --- | --- |
-    | D1 | MongoDB Schema Design | **`hmc.json`** | Structure Design of the solution |
-    | D2 | Data Ingestion Code | **`data.py`** | PyMongo ingestion script that connects to MongoDB |
-    | D3 | Database Backup | **`dump.tar.gz`** | MongoDump archive of the populated data |
-    | D4 | Query & Result | **`query.py`** & `results.pdf` | MongoDB queries and 10 results |
-    | D5 | FastAPI Implementation | **`api.py`** | All 10 API endpoints |
-    | D6 | Data Portal | **`portal.py`** | Read-only interactive portal using Streamlit |
-    | D7 | Technical Report | **`report.pdf`** | Report that outlines the mini project |
-    | D8 | System Demostration Video | **`demo.mp4`** | Presentation video of the portal | 
+    | D1 | MongoDB Schema Design | **`D1_schemas`** | Structure Design of the solution |
+    | D2 | Data Ingestion Code | **`D2_ingestion.py`** | PyMongo ingestion script that connects to MongoDB |
+    | D3 | Database Backup | **`D3_backup.tar.gz`** | MongoDump archive of the populated data |
+    | D4 | Query & Result | **`D4_query.py`** & `results.pdf` | MongoDB queries and 10 results |
+    | D5 | FastAPI Implementation | **`D5_api.py`** | All 10 API endpoints |
+    | D6 | Data Portal | **`D6_portal.py`** | Read-only interactive portal using Streamlit |
+    | D7 | Technical Report | **`D7_report.pdf`** | Report that outlines the mini project |
+    | D8 | System Demostration Video | **`D8_video.mp4`** | Presentation video of the portal | 
 
-## PHASE 1 — Understand
-- **Project overview:** 
 
-- **Data Relationship** (from client):
+## D1 — MongoDB Schema Design
+- **Entity-Relationship Diagram (ERD)**
+    ![ERD](data/erd.png)
 
-- **Raw data folder: `data-case-pgx/`**
+- **Schema Design of all 4 entities:**
+    - string: `"attribute": { "type": "string" }`
+    - array: `"attribute": { "type": "array", "items": { "type": "string" } }`
+    - integer: `"attribute": { "type": "integer" }`
+    - date: `"attribute": { "type": "string", "format": "date" }`
+
+
+## D2 — Data Ingestion Code
+- **Overview of Data in `data/xxx.csv`:**
     | No. | Files | Shape (Exc. header row) | Description |
     | --- | --- | --- | --- |
-    | 1. | **`pgx_drug_response.csv`** | (200, 15) | Patient ID, drug info, outcome, phenotype observed etc. |
+    | 1. | **`pgx_patients.csv`** | (100, 15) | Patient basic info, medical info |
     | 2. | **`pgx_gene_panels.csv`** | (9, 12) | Panel info, target genes, manufacturer etc. |
-    | 3. | **`pgx_patients.csv`** | (100, 15) | Patient basic info, medical info |
-    | 4. | **`pgx_variants.csv`** | (40, 16) | Gene, chromosome, allelic variants etc. |
+    | 3. | **`pgx_variants.csv`** | (40, 16) | Gene, chromosome, allelic variants etc. |
+    | 4. | **`pgx_drug_response.csv`** | (200, 15) | Patient ID, drug info, outcome, phenotype observed etc. |
 
-- **10 Analytical Requirements:**
-    1. 
-    2. 
-    3. 
-    4. 
-    5. 
-    6. 
-    7. 
-    8. 
-    9. 
-    10. 
+- Step in Data Ingestion:
+    - In MongoDB Atlas, create a project `HelixMedicalCenter` -> cluster `cluster0` -> database `HMC`
+    - Using pymongo (in .py file), establish MongoDB connection
+    - define functions `parse_array()`, `parse_int()`, `parse_string()`
+    - for each of the 4 entities, define a collection, read the csv file, insert each row of csv as a document into the collection
 
-## PHASE 2 — Database Schema Design
 
-## PHASE 3 — Data Ingestion
+## D3 — Database Backup  
+- Install the MongoDB Database Tools suite using `brew install mongodb-database-tools` (for MacOS)
+- Run mongodump in terminal: 
+```
+    mongodump --uri="mongodb+srv://dbAdmin:<password>@cluster0.iuvvkqs.mongodb.net/HMC" --archive=hmc_backup.tar.gz --gzip
+```
 
-## PHASE 4 — Queries & API Endpoints
 
-## PHASE 5 — Data Portal
+## D4 — Queries & Results
 
-## PHASE 6 — Report & Demo Video
+## D5 — FastAPI Implementation 
+
+## D6 — Data Portal
+
+## D7 — Technical Report
+
+## D8 — System Demonstration Video
