@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 MONGO_URI = os.getenv("MONGO_URI", "mongodb://localhost:27017")
-DB_NAME   = "pgx_registry"
+DB_NAME   = "HMC"
 
 client = MongoClient(MONGO_URI, serverSelectionTimeoutMS=8000)
 db     = client[DB_NAME]
