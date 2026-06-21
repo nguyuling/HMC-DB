@@ -19,7 +19,7 @@ def parse_string(value):
 
 import csv
 #! ingest collection 1: patients
-def ingest_patients(csv_path="data/pgx_patients.csv"):
+def ingest_patients(csv_path="D0_data/pgx_patients.csv"):
     collection = db["patients"]
     collection.delete_many({})
     documents = []
@@ -55,7 +55,7 @@ def ingest_patients(csv_path="data/pgx_patients.csv"):
         print(f"successfully import {len(documents)} documents into patients collection.")
         
 #! ingest collection 2: gene_panels
-def ingest_gene_panels(csv_path="data/pgx_gene_panels.csv"):
+def ingest_gene_panels(csv_path="D0_data/pgx_gene_panels.csv"):
     collection = db["gene_panels"]
     collection.delete_many({})
     documents = []
@@ -82,7 +82,7 @@ def ingest_gene_panels(csv_path="data/pgx_gene_panels.csv"):
         print(f"successfully import {len(documents)} documents into gene_panels collection")
 
 #! ingest collection 3: variants
-def ingest_variants(csv_path="data/pgx_variants.csv"):
+def ingest_variants(csv_path="D0_data/pgx_variants.csv"):
     collection = db["variants"]
     collection.delete_many({})
     documents = []
@@ -113,7 +113,7 @@ def ingest_variants(csv_path="data/pgx_variants.csv"):
         print(f"successfully import {len(documents)} documents into variants collection")
         
 #! ingest collection 4: drug_responses
-def ingest_drug_responses(csv_path="data/pgx_drug_responses.csv"):
+def ingest_drug_responses(csv_path="D0_data/pgx_drug_responses.csv"):
     collection = db["drug_responses"]
     collection.delete_many({})
     documents = []
