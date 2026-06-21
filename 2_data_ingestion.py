@@ -30,11 +30,12 @@ def ingest_patients(csv_path="data/pgx-patients.csv"):
             doc = {
                 "patient_id": parse_string(row.get("patient_id")),
                 "name": parse_string(row.get("name")),
+                "date_of_birth": parse_string(row.get("date_of_birth")),
                 "gender": parse_string(row.get("gender")),
-                "ethnicity": parse_string(row.get("ethnnicity")),
+                "ethnicity": parse_string(row.get("ethnicity")),
                 "blood_type": parse_string(row.get("blood_type")),
                 "primary_condition": {
-                    "icd10_code": parse_string(row.get("primary_code")),
+                    "icd10_code": parse_string(row.get("icd10_code")),
                     "description": parse_string(row.get("primary_description")),
                     "diagnosed_on": parse_string(row.get("diagnosed_on"))
                 },
@@ -42,7 +43,7 @@ def ingest_patients(csv_path="data/pgx-patients.csv"):
                 "site_id": parse_string(row.get("site_id")),
                 "ordered_panels": parse_array(row.get("ordered_panels")),
                 "contact_info": {
-                    "email": parse_string(row.get("contact.email")),
+                    "email": parse_string(row.get("contact_email")),
                     "phone": parse_string(row.get("contact_phone")),
                     "emergency_contact": parse_string(row.get("emergency_contact")),
                 },
