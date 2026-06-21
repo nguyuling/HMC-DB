@@ -19,14 +19,13 @@ def parse_string(value):
 
 import csv
 #! ingest collection 1: patients
-def ingest_patients(csv_path="data/pgx-patients.csv"):
+def ingest_patients(csv_path="data/pgx_patients.csv"):
     collection = db["patients"]
     collection.delete_many({})
     documents = []
     
     with open(csv_path, mode='r', encoding='utf-8') as file:
-        reader = csv.DictReader(file)
-        for row in reader:
+        for row in csv.DictReader(file):
             doc = {
                 "patient_id": parse_string(row.get("patient_id")),
                 "name": parse_string(row.get("name")),
@@ -35,7 +34,7 @@ def ingest_patients(csv_path="data/pgx-patients.csv"):
                 "ethnicity": parse_string(row.get("ethnicity")),
                 "blood_type": parse_string(row.get("blood_type")),
                 "primary_condition": {
-                    "icd10_code": parse_string(row.get("icd10_code")),
+                    "primary_icd10": parse_string(row.get("primary_icd10")),
                     "description": parse_string(row.get("primary_description")),
                     "diagnosed_on": parse_string(row.get("diagnosed_on"))
                 },
@@ -62,8 +61,7 @@ def ingest_gene_panels(csv_path="data/pgx_gene_panels.csv"):
     documents = []
     
     with open(csv_path, mode='r', encoding='utf-8') as file:
-        reader = csv.DictReader(file)
-        for row in reader:
+        for row in csv.DictReader(file):
             doc = {
                 "panel_id": parse_string(row.get("panel_id")),
                 "panel_name": parse_string(row.get("panel_name")),
@@ -90,8 +88,7 @@ def ingest_variants(csv_path="data/pgx_variants.csv"):
     documents = []
     
     with open(csv_path, mode='r', encoding='utf-8') as file:
-        reader = csv.DictReader()
-        for row in reader:
+        for row in csv.DictReader(file):
             doc = {
                 "variant_id": parse_string(row.get("variant_id")),
                 "panel_id": parse_string(row.get("panel_id")),
@@ -118,12 +115,11 @@ def ingest_variants(csv_path="data/pgx_variants.csv"):
 #! ingest collection 4: drug_responses
 def ingest_drug_responses(csv_path="data/pgx_drug_responses.csv"):
     collection = db["drug_responses"]
-    collection.delete_many()
+    collection.delete_many({})
     documents = []
     
     with open(csv_path, mode='r', encoding='utf-8') as file:
-        reader = csv.DictReader()
-        for row in reader:
+        for row in csv.DictReader(file):
             doc = {
                 "response_id": parse_string(row.get("response_id")),
                 "patient_id": parse_string(row.get("patient_id")),
@@ -137,7 +133,7 @@ def ingest_drug_responses(csv_path="data/pgx_drug_responses.csv"):
                 "ctcae_grade": parse_int(row.get("ctcae_grade")),
                 "recommendation": parse_string(row.get("recommendation")),
                 "evidence_source": parse_string(row.get("evidence_source")),
-                "reported_at": parse_string(row.get("reported_at")),
+                "reported_by": parse_string(row.get("reported_by")),
                 "reported_on": parse_string(row.get("reported_on")),
                 "created_at": parse_string(row.get("created_at"))
             }
