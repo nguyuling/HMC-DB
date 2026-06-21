@@ -1,3 +1,8 @@
+"""
+Run with:
+    pip install pymongo python-dotenv
+    python queries.py
+"""
 import os
 import json
 from datetime import datetime, timezone
