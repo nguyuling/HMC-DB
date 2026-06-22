@@ -1,7 +1,7 @@
 
 #! connect to mongodb
-from pymongo import MongoClient
-client = MongoClient("mongodb+srv://dbAdmin:123abc@cluster0.iuvvkqs.mongodb.net/")
+from motor.motor_asyncio import AsyncIOMotorClient
+client = AsyncIOMotorClient(MONGO_URI)
 db = client["HMC"]
 
 #! define the functions to parse data
