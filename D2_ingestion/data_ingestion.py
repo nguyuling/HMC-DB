@@ -1,7 +1,10 @@
 
 #! connect to mongodb
+import os
+from dotenv import load_dotenv
 from motor.motor_asyncio import AsyncIOMotorClient
-client = AsyncIOMotorClient(MONGO_URI)
+load_dotenv()
+client = AsyncIOMotorClient(os.getenv("MONGO_URI"))
 db = client["HMC"]
 
 #! define the functions to parse data
@@ -146,8 +149,13 @@ def ingest_drug_responses(csv_path="D0_data/pgx_drug_responses.csv"):
         print(f"successfully import {len(documents)} documents into drug_responses collection")
 
 #! call ingestion functions
-ingest_patients()
-ingest_gene_panels()
-ingest_variants()
-ingest_drug_responses()
-client.close()
+import asyncio
+async def main():
+    ingest_patients()
+    ingest_gene_panels()
+    ingest_variants()
+    ingest_drug_responses()
+    client.close()
+
+if __name__ == "__main__":
+    asyncio.run(main())
