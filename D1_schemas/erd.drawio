@@ -1,12 +1,9 @@
 <mxfile host="Electron">
   <diagram name="Page-1" id="XyqZRgpZFJz2zjG3InDY">
-    <mxGraphModel dx="1851" dy="1211" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="2142" dy="1678" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="kiHfFzSS6ANfSlzyU-_X-15" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=light-dark(#000000,#000000);" value="" vertex="1">
-          <mxGeometry height="1190" width="800" x="200" y="330" as="geometry" />
-        </mxCell>
         <mxCell id="VNXNWO7hVU25H70HiIlm-1" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=none;" value="Patients" vertex="1">
           <mxGeometry height="390" width="160" x="240" y="490" as="geometry" />
         </mxCell>
