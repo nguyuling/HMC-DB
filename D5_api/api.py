@@ -1,9 +1,8 @@
 """
 Run with:
-    pip install fastapi uvicorn pymongo python-dotenv
+    pip install fastapi uvicorn pymongo python-dotenv@pip install "fastapi[standard]"
     uvicorn main:app --reload --host 0.0.0.0 --port 8000
-
-Swagger UI: http://localhost:8000/docs
+    
 """
 
 import os
